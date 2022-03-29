@@ -2,6 +2,9 @@
 :set shiftwidth=4
 :set updatetime=100
 
+" For nvim-qt floating window background
+:GuiPopupmenu 0
+
 :augroup numbertoggle
 :  autocmd!
 :  autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
