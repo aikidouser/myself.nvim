@@ -1,5 +1,6 @@
 :set number
 :set shiftwidth=4
+:set updatetime=100
 
 :augroup numbertoggle
 :  autocmd!
@@ -9,18 +10,15 @@
 
 call plug#begin()
 
-Plug 'projekt0n/github-nvim-theme'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'airblade/vim-gitgutter', {'branch': 'master'}
 
 call plug#end()
 
 " Theme
-
-" colorscheme github_dark_default
 colorscheme dracula
 
 " File Tree
-
 :nmap <space>e <Cmd>CocCommand explorer<CR>
 
