@@ -3,7 +3,8 @@
 :set updatetime=100
 
 " For nvim-qt floating window background
-:GuiPopupmenu 0
+GuiPopupmenu 0
+autocmd BufEnter * lcd %:p:h
 
 :augroup numbertoggle
 :  autocmd!
