@@ -1,14 +1,19 @@
-:set number
-:set shiftwidth=4
-:set updatetime=100
+set number
+set shiftwidth=4
+set encoding=utf-8
+set updatetime=100
+set ignorecase
+set cursorline
+set expandtab
+set wildmenu
 
-:autocmd BufEnter * lcd %:p:h
+autocmd BufEnter * lcd %:p:h
 
-:augroup numbertoggle
-:  autocmd!
-:  autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
-:  autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
-:augroup END
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
+  autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
+augroup END
 
 
 call plug#begin()
