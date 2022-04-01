@@ -31,7 +31,7 @@ call plug#end()
 colorscheme dracula
 
 " File Tree
-nmap <space>e <Cmd>CocCommand explorer<CR>
+nmap <space>f <Cmd>CocCommand explorer<CR>
 
 " Load Setting
 runtime coc-setting.vim
