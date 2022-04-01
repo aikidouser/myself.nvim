@@ -1,11 +1,12 @@
 set number
 set shiftwidth=4
 set encoding=utf-8
-set updatetime=100
+set updatetime=200
 set ignorecase
 set cursorline
 set expandtab
 set wildmenu
+set autoread
 
 autocmd BufEnter * lcd %:p:h
 
@@ -30,5 +31,8 @@ call plug#end()
 colorscheme dracula
 
 " File Tree
-:nmap <space>e <Cmd>CocCommand explorer<CR>
+nmap <space>e <Cmd>CocCommand explorer<CR>
+
+" Load Setting
+runtime coc-setting.vim
 
