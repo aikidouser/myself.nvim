@@ -2,6 +2,7 @@ set number
 set shiftwidth=4
 set encoding=utf-8
 set updatetime=200
+set cmdheight=1
 set ignorecase
 set cursorline
 set expandtab
@@ -27,12 +28,16 @@ endif
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'airblade/vim-gitgutter', {'branch': 'master'}
+Plug 'luochen1990/rainbow'
 
 call plug#end()
 
 
 " Theme
 colorscheme dracula
+
+" Rainbow
+let g:rainbow_active = 1
 
 " File Tree
 nmap <space>f <Cmd>CocCommand explorer<CR>
