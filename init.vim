@@ -8,6 +8,7 @@ set cursorline
 set expandtab
 set wildmenu
 set autoread
+set statusline+=%F
 
 autocmd BufEnter * lcd %:p:h
 
@@ -25,10 +26,11 @@ if has('win32')
 elseif has('unix')
     Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 endif
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'airblade/vim-gitgutter', {'branch': 'master'}
+Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'luochen1990/rainbow'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'preservim/nerdtree'
 
 call plug#end()
 
