@@ -8,7 +8,6 @@ set cursorline
 set expandtab
 set wildmenu
 set autoread
-set statusline+=%F
 
 autocmd BufEnter * lcd %:p:h
 
@@ -42,7 +41,7 @@ colorscheme dracula
 let g:rainbow_active = 1
 
 " File Tree
-nmap <space>f <Cmd>CocCommand explorer<CR>
+nmap <space>f <Cmd>NERDTree<CR>
 
 " Load Setting
 runtime coc-setting.vim
