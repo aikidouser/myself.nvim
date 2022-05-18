@@ -8,6 +8,7 @@ set cursorline
 set expandtab
 set wildmenu
 set autoread
+set linebreak
 
 autocmd BufEnter * lcd %:p:h
 
