@@ -10,12 +10,12 @@ set wildmenu
 set autoread
 set linebreak
 
-autocmd BufEnter * lcd %:p:h
+autocmd BufEnter * silent! lcd %:p:h
 
 augroup numbertoggle
   autocmd!
-  autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
-  autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
+  autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | silent! set rnu   | endif
+  autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * silent! if &nu                  | silent! set nornu | endif
 augroup END
 
 
@@ -46,4 +46,7 @@ nmap <space>f <Cmd>NERDTree<CR>
 
 " Load Setting
 runtime coc-setting.vim
+
+" Key Binding
+tnoremap <Esc> <C-\><C-n>
 
