@@ -1,14 +1,28 @@
+set autoread
+set cmdheight=1
+set cursorcolumn
+set cursorline
+set encoding=utf-8
+set expandtab
+set ignorecase
+set linebreak
 set number
 set shiftwidth=4
-set encoding=utf-8
 set updatetime=200
-set cmdheight=1
-set ignorecase
-set cursorline
-set expandtab
 set wildmenu
-set autoread
-set linebreak
+
+" Status
+" Init to empty
+set statusline=
+" %F: Full path of the file
+" %M: If the file was modified and unsave, there will be a "+"
+" %Y: File type
+" %R: There will be the flag if the file is ReadOnly
+set statusline+=\ %F\ %M\ %Y\ %R
+" Seperate left and right side
+set statusline+=%=
+" %p%%: percentage
+set statusline+=\ row:\ %l\ col:\ %c\ \ %p%%
 
 autocmd BufEnter * silent! lcd %:p:h
 
@@ -48,5 +62,6 @@ nmap <space>f <Cmd>NERDTree<CR>
 runtime coc-setting.vim
 
 " Key Binding
+" Terminal
 tnoremap <Esc> <C-\><C-n>
 
