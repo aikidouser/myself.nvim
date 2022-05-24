@@ -7,7 +7,7 @@ set expandtab
 set ignorecase
 set linebreak
 set number
-set shiftwidth=4
+set shiftwidth=2
 set updatetime=200
 set wildmenu
 
@@ -24,12 +24,14 @@ set statusline+=%=
 " %p%%: percentage
 set statusline+=\ row:\ %l\ col:\ %c\ \ %p%%
 
+
+" AutoCmd
 autocmd BufEnter * silent! lcd %:p:h
 
 augroup numbertoggle
   autocmd!
   autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | silent! set rnu   | endif
-  autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * silent! if &nu                  | silent! set nornu | endif
+  autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * silent! if &nu          | silent! set nornu | endif
 augroup END
 
 
@@ -45,6 +47,7 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'luochen1990/rainbow'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
+Plug 'chrisbra/csv.vim'
 
 call plug#end()
 
@@ -55,13 +58,21 @@ colorscheme dracula
 " Rainbow
 let g:rainbow_active = 1
 
-" File Tree
-nmap <space>f <Cmd>NERDTree<CR>
-
 " Load Setting
 runtime coc-setting.vim
 
-" Key Binding
+" Key Mappings
+
+" Normal
+
+" Tab
+nmap <silent> gl :tabl<cr>
+nmap <silent> gh :tabr<cr>
+nmap <silent> gn :tabnew<cr>
+nmap <silent> gc :tabclose<cr>
+
 " Terminal
 tnoremap <Esc> <C-\><C-n>
 
+" File Tree
+nmap <space>f <Cmd>NERDTree<CR>
