@@ -37,11 +37,11 @@ augroup END
 
 call plug#begin()
 
-if has('win32')
-    Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': 'markdown'} 
-elseif has('unix')
-    Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
-endif
+" if has('win32')
+"     Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': 'markdown'} 
+" elseif has('unix')
+"     Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+" endif
 Plug 'airblade/vim-gitgutter', {'branch': 'master'}
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'luochen1990/rainbow'
