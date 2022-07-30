@@ -21,10 +21,12 @@ return require('packer').startup(function(use)
       run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
   }
 
+  -- Git 
   use {
     'lewis6991/gitsigns.nvim',
     -- tag = 'release' -- To use the latest release
   } 
+  -- use {'f-person/git-blame.nvim'}
 
   -- LSP
   use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
