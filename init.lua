@@ -1,8 +1,6 @@
 require("plugins")
-
-vim.api.nvim_set_keymap("i", "jk", "<ESC>", { noremap = true })
-
-vim.g.mapleader = " "
+require("auto")
+require("keymap")
 
 vim.opt.autoread = true
 vim.opt.cmdheight = 1
@@ -37,9 +35,6 @@ vim.opt.statusline:append(" row: %l col: %c %p%%")
 
 vim.cmd("autocmd BufEnter * silent! lcd %:p:h")
 
-require("nvim-web-devicons").setup {
-  default = true;
-}
 
 require'nvim-treesitter.configs'.setup {
   -- Install parsers synchronously (only applied to `ensure_installed`)
@@ -52,19 +47,6 @@ require'nvim-treesitter.configs'.setup {
     enable = true,
 
     additional_vim_regex_highlighting = false,
-  },
-}
-
-require("telescope").setup {}
-require("telescope").load_extension "file_browser"
-
-require("gitsigns").setup {
-  signs = {
-    add          = {hl = 'GitSignsAdd'   , text = '|', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'},
-    change       = {hl = 'GitSignsChange', text = '|', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'},
-    delete       = {hl = 'GitSignsDelete', text = '_', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn'},
-    topdelete    = {hl = 'GitSignsDelete', text = '‾', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn'},
-    changedelete = {hl = 'GitSignsChange', text = '~', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'},
   },
 }
 

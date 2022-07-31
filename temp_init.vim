@@ -74,5 +74,3 @@ nmap <silent> gc :tabclose<cr>
 " Terminal
 tnoremap <Esc> <C-\><C-n>
 
-" File Tree
-nmap <space>f <Cmd>NERDTree<CR>
