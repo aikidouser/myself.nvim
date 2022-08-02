@@ -1,5 +1,5 @@
 require("plugins")
-require("auto")
+require("autocmd")
 require("keymap")
 
 vim.opt.autoread = true
@@ -13,6 +13,7 @@ vim.opt.linebreak = true
 -- vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.shiftwidth = 2
+vim.opt.tabstop = 2
 vim.opt.updatetime = 200
 vim.opt.wildmenu = true
 
@@ -33,9 +34,6 @@ vim.opt.statusline:append("%=")
 -- %p%%: percentage
 vim.opt.statusline:append(" row: %l col: %c %p%%")
 
-vim.cmd("autocmd BufEnter * silent! lcd %:p:h")
-
-
 require'nvim-treesitter.configs'.setup {
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
@@ -45,7 +43,6 @@ require'nvim-treesitter.configs'.setup {
 
   highlight = {
     enable = true,
-
     additional_vim_regex_highlighting = false,
   },
 }

@@ -4,6 +4,8 @@ return require('packer').startup(function(use)
 
   -- Color Scheme
   use {'dracula/vim', as = 'dracula'}
+  use {'navarasu/onedark.nvim'}
+  use {'folke/tokyonight.nvim'}
 
   -- Icon
   use {'kyazdani42/nvim-web-devicons'}
@@ -12,13 +14,13 @@ return require('packer').startup(function(use)
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
     -- or                            , branch = '0.1.x',
-    requires = { {'nvim-lua/plenary.nvim'} }
+    requires = {{'nvim-lua/plenary.nvim'}}
   }
   use { "nvim-telescope/telescope-file-browser.nvim" }
 
   use {
       'nvim-treesitter/nvim-treesitter',
-      run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+      run = function() require('nvim-treesitter.install').update({with_sync = true}) end,
   }
 
   -- Git 
@@ -29,7 +31,7 @@ return require('packer').startup(function(use)
   -- use {'f-person/git-blame.nvim'}
 
   -- LSP
-  use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
+  use {'neovim/nvim-lspconfig'} -- Configurations for Nvim LSP
 
   -- Complete
   use {'hrsh7th/cmp-nvim-lsp'}
