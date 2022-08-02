@@ -3,11 +3,13 @@ vim.g.mapleader = " "
 -- Default
 -- Normal Mode
 vim.keymap.set("n", "<leader>t", ":sp<CR><C-w>j:terminal<CR>", {noremap = true})
+vim.keymap.set("n", "<leader>b", ":ls<CR>:b ", {noremap = true})
 
 -- Insert Mode
 vim.keymap.set("i", "jk", "<ESC>", {noremap = true})
 
 -- terminal
+vim.keymap.set("t", "<ESC>", "<C-\\><C-n>", {noremap = true})
 vim.keymap.set("t", "jk", "<C-\\><C-n>", {noremap = true})
 
 -- Plugins
