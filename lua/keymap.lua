@@ -2,7 +2,8 @@ vim.g.mapleader = " "
 
 -- Default
 -- Normal Mode
-vim.keymap.set("n", "<leader>t", ":sp<CR><C-w>j:terminal<CR>", {noremap = true})
+vim.keymap.set("n", "<leader>tv", ":vs<CR><C-w>l:terminal<CR>", {noremap = true})
+vim.keymap.set("n", "<leader>ts", ":sp<CR><C-w>j:terminal<CR>", {noremap = true})
 vim.keymap.set("n", "<leader>b", ":ls<CR>:b ", {noremap = true})
 
 -- Insert Mode
