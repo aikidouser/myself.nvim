@@ -6,6 +6,13 @@ vim.keymap.set("n", "<leader>tv", ":vs<CR><C-w>l:terminal<CR>", {noremap = true}
 vim.keymap.set("n", "<leader>ts", ":sp<CR><C-w>j:terminal<CR>", {noremap = true})
 vim.keymap.set("n", "<leader>b", ":ls<CR>:b ", {noremap = true})
 
+vim.keymap.set({'n', 'v'}, '<leader>c', '"+y', {noremap = true})
+vim.keymap.set({'n', 'v'}, '<leader>p', '"+p', {noremap = true})
+
+vim.keymap.set('n', '<C-s>', ':w<CR>', {noremap = true})
+
+vim.keymap.set('n', '<leader>s', ':source %<CR>', {noremap = true})
+
 -- Insert Mode
 vim.keymap.set("i", "jk", "<ESC>", {noremap = true})
 

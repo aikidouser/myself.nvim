@@ -1,9 +1,10 @@
 return require('packer').startup(function(use)
   -- Manage itself
-  use 'wbthomason/packer.nvim'
+  use {'wbthomason/packer.nvim'}
 
   -- Color Scheme
-  use {'dracula/vim', as = 'dracula'}
+  -- use {'dracula/vim', as = 'dracula'}
+  use {'Mofiqul/dracula.nvim'}
   use {'navarasu/onedark.nvim'}
   use {'folke/tokyonight.nvim'}
 
@@ -39,4 +40,14 @@ return require('packer').startup(function(use)
   use {'hrsh7th/cmp-path'}
   use {'hrsh7th/cmp-cmdline'}
   use {'hrsh7th/nvim-cmp'}
+
+-- Aid Tool
+  -- use {'Pocco81/true-zen.nvim'}
+
+-- UI
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  }
+  use "lukas-reineke/indent-blankline.nvim"
 end)

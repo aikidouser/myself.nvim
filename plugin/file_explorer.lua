@@ -6,7 +6,6 @@ require("telescope").setup {
       mappings = {
         ["i"] = {},
         ["n"] = {
-          o = false
         }
       }
     }
