@@ -1,3 +1,5 @@
+require('startup').setup ()
+
 require('nvim-treesitter.configs').setup {
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
@@ -10,6 +12,7 @@ require('nvim-treesitter.configs').setup {
     additional_vim_regex_highlighting = false,
   },
 }
+
 require("indent_blankline").setup {
     -- for example, context is off by default, use this to turn it on
     show_current_context = true,
