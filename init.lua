@@ -2,22 +2,27 @@ require("plugins")
 require("autocmd")
 require("keymap")
 
-vim.opt.autoread = true
-vim.opt.cmdheight = 1
-vim.opt.cursorcolumn = true
-vim.opt.cursorline = true
-vim.opt.encoding = 'utf-8'
-vim.opt.expandtab = true
-vim.opt.ignorecase = true
-vim.opt.linebreak = true
-vim.opt.list = true
-vim.opt.listchars:append('eol:↴')
-vim.opt.number = true
-vim.opt.relativenumber = true
-vim.opt.shiftwidth = 2
-vim.opt.tabstop = 2
-vim.opt.updatetime = 200
-vim.opt.wildmenu = true
+local opt = vim.opt
+opt.autoread = true
+opt.cmdheight = 1
+opt.cursorcolumn = true
+opt.cursorline = true
+opt.encoding = 'utf-8'
+opt.expandtab = true
+opt.ignorecase = true
+opt.linebreak = true
+opt.list = true
+opt.listchars:append('eol:↴')
+opt.number = true
+opt.relativenumber = true
+opt.shiftwidth = 2
+opt.tabstop = 2
+opt.updatetime = 200
+opt.wildmenu = true
+
+-- Folding
+vim.o.foldmethod = 'expr'
+vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
 
 -- Gui Fonts
 vim.opt.guifont = 'Monoid Nerd Font Mono:h10'
