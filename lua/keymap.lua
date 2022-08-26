@@ -20,7 +20,7 @@ vim.keymap.set("i", "jl", "<ESC>", {noremap = true})
 -- terminal
 vim.keymap.set("t", "<ESC>", "<C-\\><C-n>", {noremap = true})
 vim.keymap.set("t", "jl", "<C-\\><C-n>", {noremap = true})
-vim.keymap.set("t", "<leader>t", "<ESC>:FTermToggle<CR>", {remap = true})
+-- vim.keymap.set("t", "<leader>t", "<ESC>:FTermToggle<CR>", {remap = true})
 
 -- Plugins
 -- Telescope
