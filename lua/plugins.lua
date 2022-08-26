@@ -46,6 +46,7 @@ return require('packer').startup(function(use)
 
 -- Aid Tool
   -- use {'Pocco81/true-zen.nvim'}
+  use {"numToStr/FTerm.nvim"}
 
 -- UI
   use {
