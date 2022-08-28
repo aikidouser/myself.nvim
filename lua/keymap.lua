@@ -1,5 +1,7 @@
 vim.g.mapleader = " "
 
+vim.keymap.set("i", "jl", "<ESC>", {noremap = true})
+
 -- Buffer
 vim.keymap.set("n", "<leader>b", ":ls<CR>:b ", {noremap = true})
 
@@ -13,7 +15,11 @@ vim.keymap.set('n', '<C-s>', ':w<CR>', {noremap = true})
 -- Save
 vim.keymap.set('n', '<leader>s', ':source %<CR>', {noremap = true})
 
-vim.keymap.set("i", "jl", "<ESC>", {noremap = true})
+-- Tab
+vim.keymap.set('n', 'gn', ':tabnew<CR>', {noremap = true})
+vim.keymap.set('n', 'gc', ':tabclose<CR>', {noremap = true})
+vim.keymap.set('n', 'gl', ':tablast<CR>', {noremap = true})
+vim.keymap.set('n', 'gf', ':tabfirst<CR>', {noremap = true})
 
 -- terminal
 vim.keymap.set("t", "<ESC>", "<C-\\><C-n>", {noremap = true})
