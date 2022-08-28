@@ -21,6 +21,7 @@ opt.updatetime = 200
 opt.wildmenu = true
 
 -- Folding
+vim.opt.foldlevel = 99
 vim.o.foldmethod = 'expr'
 vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
 
