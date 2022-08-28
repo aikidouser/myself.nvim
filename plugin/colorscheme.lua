@@ -1,4 +1,9 @@
-vim.cmd("colorscheme dracula")
+require('dracula').setup{
+  colors = {
+    nontext = '#66708c'
+  }
+}
+vim.cmd('colorscheme dracula')
 
 -- vim.g.tokyonight_style = "night"
 -- vim.g.tokyonight_style = "storm"

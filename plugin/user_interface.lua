@@ -1,5 +1,5 @@
 require('startup').setup {
-  theme = "evil",
+  theme = 'dashboard'
 }
 
 require('nvim-treesitter.configs').setup {

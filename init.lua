@@ -25,7 +25,7 @@ vim.o.foldmethod = 'expr'
 vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
 
 -- Gui Fonts
-vim.opt.guifont = 'Monoid Nerd Font Mono:h10'
+vim.opt.guifont = 'Monoid Nerd Font Mono:h10.5'
 -- vim.opt.guifont = "UbuntuMono Nerd Font Mono:h13"
 
 -- Status Line

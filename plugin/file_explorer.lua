@@ -5,8 +5,7 @@ require("telescope").setup {
     file_browser = {
       mappings = {
         ["i"] = {},
-        ["n"] = {
-        }
+        ["n"] = {}
       }
     }
   }
