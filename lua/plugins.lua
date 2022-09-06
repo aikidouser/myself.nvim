@@ -36,6 +36,7 @@ return require('packer').startup(function(use)
 
   -- LSP
   use {'neovim/nvim-lspconfig'} -- Configurations for Nvim LSP
+  use {'williamboman/mason.nvim'}
 
   -- Complete
   use {'hrsh7th/cmp-nvim-lsp'}
@@ -58,5 +59,6 @@ return require('packer').startup(function(use)
     'startup-nvim/startup.nvim',
     requires = {'nvim-telescope/telescope.nvim', 'nvim-lua/plenary.nvim'},
   }
+  use {'nvim-telescope/telescope-ui-select.nvim' }
 end)
 

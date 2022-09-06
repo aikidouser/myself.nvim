@@ -1,8 +1,26 @@
 -- Auto complete
 local cmp = require("cmp")
 
+require('mason').setup()
+
+require('lspconfig').pyright.setup{}
+require('lspconfig').sumneko_lua.setup{
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = {'vim'}
+      }
+    }
+  }
+}
+
+local has_words_before = function ()
+  local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match('%s') == nil
+end
+
 cmp.setup{
-  -- snippet = {
+  snippet = {
   --   -- REQUIRED - you must specify a snippet engine
   --   expand = function(args)
   --     vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
@@ -10,7 +28,25 @@ cmp.setup{
   --     -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
   --     -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
   --   end,
-  -- },
+    expand = function(args)
+      local line_num, col = unpack(vim.api.nvim_win_get_cursor(0))
+      local line_text = vim.api.nvim_buf_get_lines(0, line_num - 1, line_num, true)[1]
+      local indent = string.match(line_text, '^%s*')
+      local replace = vim.split(args.body, '\n', true)
+      local surround = string.match(line_text, '%S.*') or ''
+      local surround_end = surround:sub(col)
+
+      replace[1] = surround:sub(0, col - 1)..replace[1]
+      replace[#replace] = replace[#replace]..(#surround_end > 1 and ' ' or '')..surround_end
+      if indent ~= '' then
+        for i, line in ipairs(replace) do
+          replace[i] = indent..line
+        end
+      end
+
+      vim.api.nvim_buf_set_lines(0, line_num - 1, line_num, true, replace)
+    end,
+  },
   window = {
     -- completion = cmp.config.window.bordered(),
     -- documentation = cmp.config.window.bordered(),
@@ -21,18 +57,28 @@ cmp.setup{
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<C-e>'] = cmp.mapping.abort(),
     ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-    ["<Tab>"] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      -- elseif vim.fn["vsnip#available"](1) == 1 then
-      --   feedkey("<Plug>(vsnip-expand-or-jump)", "")
-      --elseif has_words_before() then
-      --  cmp.complete()
-      else
-        fallback() -- The fallback function sends a already mapped key. In this case, it's probably `<Tab>`.
+    -- ["<Tab>"] = cmp.mapping(function(fallback)
+    --   if cmp.visible() then
+    --     cmp.select_next_item()
+    --   -- elseif vim.fn["vsnip#available"](1) == 1 then
+    --   --   feedkey("<Plug>(vsnip-expand-or-jump)", "")
+    --   --elseif has_words_before() then
+    --   --  cmp.complete()
+    --   else
+    --     fallback() -- The fallback function sends a already mapped key. In this case, it's probably `<Tab>`.
+    --   end
+    -- end, { "i", "s" }),
+    ['<Tab>'] = function(fallback)
+      if not cmp.select_next_item() then
+        if vim.bo.buftype ~= 'prompt' and has_words_before() then
+          cmp.complete()
+        else
+          fallback()
+        end
       end
-    end, { "i", "s" }),
+    end,
   }),
+
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
     -- { name = 'vsnip' }, -- For vsnip users.
