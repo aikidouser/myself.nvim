@@ -1,6 +1,7 @@
-require("plugins")
-require("autocmd")
-require("keymap")
+require('plugins')
+require('autocmd')
+require('keymap')
+require('test')
 
 local opt = vim.opt
 opt.autoread = true
