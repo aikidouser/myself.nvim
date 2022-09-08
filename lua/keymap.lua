@@ -25,6 +25,7 @@ vim.keymap.set('n', 'gf', ':tabfirst<CR>', {noremap = true})
 vim.keymap.set("t", "<ESC>", "<C-\\><C-n>", {noremap = true})
 vim.keymap.set("t", "jl", "<C-\\><C-n>", {noremap = true})
 vim.keymap.set("n", "<leader>tf", ":FTermToggle<CR>", {noremap = true})
+vim.keymap.set("n", "<leader>td", ":FTermExit<CR>", {noremap = true})
 vim.keymap.set("n", "<leader>tv", ":vs<CR><C-w>l:terminal<CR>", {noremap = true})
 vim.keymap.set("n", "<leader>ts", ":sp<CR><C-w>j:terminal<CR>", {noremap = true})
 
