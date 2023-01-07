@@ -9,7 +9,7 @@ if exists(':GuiPopupmenu')
 endif
 
 if exists(':GuiScrollBar')
-    GuiScrollBar 1
+    GuiScrollBar 0
 endif
 
 nnoremap <silent><RightMouse> :call GuiShowContextMenu()<CR>
