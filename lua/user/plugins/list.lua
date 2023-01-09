@@ -3,8 +3,9 @@ return require('packer').startup(function(use)
   use { 'wbthomason/packer.nvim' }
 
   -- Color Scheme
-  -- use {'dracula/vim', as = 'dracula'}
-  use { 'Mofiqul/dracula.nvim' }
+  -- use { 'dracula/vim', as = 'dracula' }
+  -- use { 'Mofiqul/dracula.nvim' }
+  use 'Yazeed1s/oh-lucy.nvim'
   use { 'navarasu/onedark.nvim' }
   use { 'folke/tokyonight.nvim' }
   use { "catppuccin/nvim", as = "catppuccin" }
