@@ -1,1 +1,1 @@
-require("user.plugins.colorscheme.tokoyonight")
+require("user.plugins.colorscheme.catppuccin")

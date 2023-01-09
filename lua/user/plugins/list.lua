@@ -7,6 +7,7 @@ return require('packer').startup(function(use)
   use { 'Mofiqul/dracula.nvim' }
   use { 'navarasu/onedark.nvim' }
   use { 'folke/tokyonight.nvim' }
+  use { "catppuccin/nvim", as = "catppuccin" }
 
   -- Icon
   use { 'kyazdani42/nvim-web-devicons' }
