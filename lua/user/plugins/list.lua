@@ -69,7 +69,6 @@ return require('packer').startup(function(use)
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
-  use { 'lukas-reineke/indent-blankline.nvim' }
   -- use {
   --   'startup-nvim/startup.nvim',
   --   requires = { 'nvim-telescope/telescope.nvim', 'nvim-lua/plenary.nvim' },
@@ -82,5 +81,6 @@ return require('packer').startup(function(use)
       require("user.plugins.pconfig.animate")
       require("user.plugins.pconfig.session")
       require("user.plugins.pconfig.starter")
+      require("user.plugins.pconfig.indentscope")
     end }
 end)
