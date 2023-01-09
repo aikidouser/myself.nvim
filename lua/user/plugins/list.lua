@@ -75,4 +75,10 @@ return require('packer').startup(function(use)
     requires = { 'nvim-telescope/telescope.nvim', 'nvim-lua/plenary.nvim' },
   }
   use { 'nvim-telescope/telescope-ui-select.nvim' }
+
+  -- mini.nvim
+  use { 'echasnovski/mini.nvim',
+    config = function()
+      require("user.plugins.pconfig.session")
+    end }
 end)
