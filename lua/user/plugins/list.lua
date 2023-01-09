@@ -70,15 +70,17 @@ return require('packer').startup(function(use)
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
   use { 'lukas-reineke/indent-blankline.nvim' }
-  use {
-    'startup-nvim/startup.nvim',
-    requires = { 'nvim-telescope/telescope.nvim', 'nvim-lua/plenary.nvim' },
-  }
+  -- use {
+  --   'startup-nvim/startup.nvim',
+  --   requires = { 'nvim-telescope/telescope.nvim', 'nvim-lua/plenary.nvim' },
+  -- }
   use { 'nvim-telescope/telescope-ui-select.nvim' }
 
   -- mini.nvim
   use { 'echasnovski/mini.nvim',
     config = function()
+      require("user.plugins.pconfig.animate")
       require("user.plugins.pconfig.session")
+      require("user.plugins.pconfig.starter")
     end }
 end)
