@@ -3,4 +3,6 @@ if not status then
   return
 end
 
-session.setup({})
+session.setup({
+  autowrite = false,
+})
