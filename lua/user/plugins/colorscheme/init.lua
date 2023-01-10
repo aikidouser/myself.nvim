@@ -1,1 +1,1 @@
-require("user.plugins.colorscheme.catppuccin")
+require("user.plugins.colorscheme.material")

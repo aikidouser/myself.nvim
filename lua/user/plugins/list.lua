@@ -5,7 +5,7 @@ return require('packer').startup(function(use)
   -- Color Scheme
   -- use { 'dracula/vim', as = 'dracula' }
   -- use { 'Mofiqul/dracula.nvim' }
-  use 'Yazeed1s/oh-lucy.nvim'
+  use { 'marko-cerovac/material.nvim' }
   use { 'navarasu/onedark.nvim' }
   use { 'folke/tokyonight.nvim' }
   use { "catppuccin/nvim", as = "catppuccin" }
