@@ -71,6 +71,14 @@ return require('packer').startup(function(use)
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
+  -- Lua
+  use {
+    "folke/todo-comments.nvim",
+    requires = "nvim-lua/plenary.nvim",
+    config = function()
+      require("user.plugins.pconfig.todo_comments")
+    end
+  }
   -- use {
   --   'startup-nvim/startup.nvim',
   --   requires = { 'nvim-telescope/telescope.nvim', 'nvim-lua/plenary.nvim' },
