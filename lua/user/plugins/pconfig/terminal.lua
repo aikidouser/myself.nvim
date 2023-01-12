@@ -15,7 +15,7 @@ local fterm = require("FTerm")
 
 local tig = fterm:new({
   ft = "fterm_tig",
-  cmd = "tig",
+  cmd = "tig --all",
   dimensions = {
     height = 0.9,
     width = 0.9,
