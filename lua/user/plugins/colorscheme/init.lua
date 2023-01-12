@@ -1,1 +1,1 @@
-require("user.plugins.colorscheme.material")
+require("user.plugins.colorscheme.tokyonight")
