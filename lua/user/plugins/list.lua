@@ -32,7 +32,9 @@ return require('packer').startup(function(use)
   -- Git
   use {
     'lewis6991/gitsigns.nvim',
-    -- tag = 'release' -- To use the latest release
+    config = function()
+      require("user.plugins.pconfig.gitsigns")
+    end,
   }
   -- use {'f-person/git-blame.nvim'}
 
