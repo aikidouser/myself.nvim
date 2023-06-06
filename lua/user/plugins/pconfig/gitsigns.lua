@@ -8,5 +8,6 @@ require("gitsigns").setup {
     untracked    = { text = '┆' },
   },
   numhl = true,
+  signcolumn = false;
   current_line_blame = true,
 }

@@ -13,16 +13,18 @@ opt.listchars:append('eol:↴')
 opt.number = true
 opt.relativenumber = true
 opt.shiftwidth = 2
+opt.signcolumn="number"
 opt.splitright = true
 opt.tabstop = 2
 opt.updatetime = 200
 opt.wildmenu = true
 
 -- Folding
-vim.opt.foldlevel = 99
-vim.opt.foldmethod = 'expr'
-vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
+opt.foldcolumn = "1"
+-- vim.opt.foldlevel = 99
+opt.foldmethod = 'manual'
+-- vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
 
--- Gui Fonts
-vim.opt.guifont = 'Monoid Nerd Font Mono:h10.5'
+-- Gui Fnts
+opt.guifont = 'JetBrainsMono Nerd Font Mono:h11.0'
 -- vim.opt.guifont = "UbuntuMono Nerd Font Mono:h14"
