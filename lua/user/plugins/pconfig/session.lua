@@ -5,4 +5,5 @@ end
 
 session.setup({
   autowrite = false,
+  force = { read = false, write = true, delete = true },
 })
