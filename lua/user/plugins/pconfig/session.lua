@@ -4,6 +4,6 @@ if not status then
 end
 
 session.setup({
-  autowrite = false,
+  autowrite = true,
   force = { read = false, write = true, delete = true },
 })
