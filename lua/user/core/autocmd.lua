@@ -1,5 +1,14 @@
-vim.cmd("autocmd BufEnter *.* silent! lcd %:p:h")
-vim.cmd("autocmd BufWritePre *.* lua vim.lsp.buf.format()")
+vim.api.nvim_create_autocmd(
+'BufWritePre', {
+  pattern = '',
+  command = 'lua vim.lsp.buf.format()'
+})
+
+vim.api.nvim_create_autocmd(
+'BufEnter', {
+  pattern = '',
+  command = 'set fo-=c fo-=r fo-=o'
+})
 
 -- https://www.reddit.com/r/neovim/comments/zy5s0l/you_dont_need_vimrooter_usually_or_how_to_set_up/?utm_source=share&utm_medium=ios_app&utm_name=ioscss&utm_content=2&utm_term=1 Array of file names indicating root directory. Modify to your liking.
 local root_names = { '.git', 'Makefile' }
