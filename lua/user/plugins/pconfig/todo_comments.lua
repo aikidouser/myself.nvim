@@ -1,6 +1,10 @@
-local status, highlight = pcall(require, "todo-comments")
+local status, todo_highlight = pcall(require, "todo-comments")
 if not status then
   return
 end
 
-highlight.setup()
+todo_highlight.setup({
+  highlight = {
+    comments_only = false,
+  },
+})
