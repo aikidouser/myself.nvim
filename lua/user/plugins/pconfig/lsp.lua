@@ -1,5 +1,5 @@
 -- Auto complete
-local cmp = require("cmp")
+-- local cmp = require("cmp")
 
 require('mason').setup()
 
