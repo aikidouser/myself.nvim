@@ -11,7 +11,7 @@ vim.api.nvim_create_autocmd(
 })
 
 -- https://www.reddit.com/r/neovim/comments/zy5s0l/you_dont_need_vimrooter_usually_or_how_to_set_up/?utm_source=share&utm_medium=ios_app&utm_name=ioscss&utm_content=2&utm_term=1 Array of file names indicating root directory. Modify to your liking.
-local root_names = { '.git', 'Makefile' }
+local root_names = { '.git', 'Makefile', 'README.md' }
 
 -- Cache to use for speed up (at cost of possibly outdated results)
 local root_cache = {}
