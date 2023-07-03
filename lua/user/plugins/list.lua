@@ -94,5 +94,6 @@ return require('packer').startup(function(use)
       require("user.plugins.pconfig.session")
       require("user.plugins.pconfig.starter")
       require("user.plugins.pconfig.indentscope")
+      require("user.plugins.pconfig.minifiles")
     end }
 end)

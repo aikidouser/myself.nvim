@@ -31,10 +31,13 @@ vim.keymap.set('n', '<leader>tv', ':vs<CR><C-w>l:terminal<CR>', { noremap = true
 vim.keymap.set('n', '<leader>ts', ':sp<CR><C-w>j:terminal<CR>', { noremap = true })
 
 -- Telescope
-vim.keymap.set('n', '<leader>fb', ':Telescope file_browser<CR>', { noremap = true })
+-- vim.keymap.set('n', '<leader>fb', ':Telescope file_browser<CR>', { noremap = true })
 vim.keymap.set('n', '<leader>ff', ':Telescope find_files<CR>', { noremap = true })
 vim.keymap.set('n', '<leader>fo', ':Telescope oldfiles<CR>', { noremap = true })
 vim.keymap.set('n', '<leader>lg', ':Telescope live_grep<CR>', { noremap = true })
+
+-- File Browser
+vim.keymap.set('n', '<leader>fb', ':lua MiniFiles.open()<CR>', { noremap = true })
 
 -- Session
 vim.keymap.set('n', '<leader>s', ':lua MiniSessions.select()<CR>', { noremap = true })
