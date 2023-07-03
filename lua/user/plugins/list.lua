@@ -45,11 +45,11 @@ return require('packer').startup(function(use)
   use { "p00f/clangd_extensions.nvim" }
 
   -- Complete
-  use { 'hrsh7th/cmp-nvim-lsp' }
-  use { 'hrsh7th/cmp-buffer' }
-  use { 'hrsh7th/cmp-path' }
-  use { 'hrsh7th/cmp-cmdline' }
-  use { 'hrsh7th/nvim-cmp' }
+  -- use { 'hrsh7th/cmp-nvim-lsp' }
+  -- use { 'hrsh7th/cmp-buffer' }
+  -- use { 'hrsh7th/cmp-path' }
+  -- use { 'hrsh7th/cmp-cmdline' }
+  -- use { 'hrsh7th/nvim-cmp' }
 
   -- Aid Tool
   use { "numToStr/FTerm.nvim" }
@@ -91,9 +91,10 @@ return require('packer').startup(function(use)
   use { 'echasnovski/mini.nvim',
     config = function()
       require("user.plugins.pconfig.animate")
-      require("user.plugins.pconfig.session")
-      require("user.plugins.pconfig.starter")
+      require("user.plugins.pconfig.completion")
       require("user.plugins.pconfig.indentscope")
       require("user.plugins.pconfig.minifiles")
+      require("user.plugins.pconfig.session")
+      require("user.plugins.pconfig.starter")
     end }
 end)

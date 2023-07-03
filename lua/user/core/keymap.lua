@@ -41,3 +41,7 @@ vim.keymap.set('n', '<leader>fb', ':lua MiniFiles.open()<CR>', { noremap = true 
 
 -- Session
 vim.keymap.set('n', '<leader>s', ':lua MiniSessions.select()<CR>', { noremap = true })
+
+-- Completion
+vim.keymap.set('i', '<Tab>',   [[pumvisible() ? "\<C-n>" : "\<Tab>"]],   { expr = true })
+vim.keymap.set('i', '<S-Tab>', [[pumvisible() ? "\<C-p>" : "\<S-Tab>"]], { expr = true })
