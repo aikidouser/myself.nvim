@@ -3,4 +3,9 @@ if not status then
   return
 end
 
-files.setup()
+files.setup({
+  windows = {
+    preview = true,
+    width_preview = 40,
+  }
+})
