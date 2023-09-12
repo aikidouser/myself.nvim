@@ -1,94 +1,98 @@
-return require('packer').startup(function(use)
-  -- Manage itself
-  use { 'wbthomason/packer.nvim' }
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
 
+return require('lazy').setup({
   -- Color Scheme
-  -- use { 'dracula/vim', as = 'dracula' }
-  use { 'maxmx03/dracula.nvim' }
-  use { 'marko-cerovac/material.nvim' }
-  use { 'navarasu/onedark.nvim' }
-  use { 'folke/tokyonight.nvim' }
-  use { "catppuccin/nvim", as = "catppuccin" }
+  -- 'dracula/vim', name = 'dracula',
+  'maxmx03/dracula.nvim',
+  'marko-cerovac/material.nvim',
+  'navarasu/onedark.nvim',
+  'folke/tokyonight.nvim',
+  {
+    "catppuccin/nvim", name = "catppuccin",
+  },
 
   -- Icon
-  use { 'kyazdani42/nvim-web-devicons' }
+  'kyazdani42/nvim-web-devicons',
 
   -- File Explorer
-  use {
-    'nvim-telescope/telescope.nvim', tag = '0.1.0',
+  {
+    'nvim-telescope/telescope.nvim', version = "0.1.0",
     -- or                            , branch = '0.1.x',
-    requires = {
+    dependencies = {
       { 'nvim-lua/plenary.nvim' },
       { 'nvim-telescope/telescope-live-grep-args.nvim' },
     },
-  }
-  use { "nvim-telescope/telescope-file-browser.nvim" }
+  },
+  "nvim-telescope/telescope-file-browser.nvim",
 
-  use {
+  {
     'nvim-treesitter/nvim-treesitter',
-    run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
-  }
+    build = function()
+      require('nvim-treesitter.install').update({ with_sync = true })
+    end,
+  },
 
   -- Git
-  use {
+  {
     'lewis6991/gitsigns.nvim',
     config = function()
       require("user.plugins.pconfig.gitsigns")
     end,
-  }
-  -- use {'f-person/git-blame.nvim'}
+  },
+  -- 'f-person/git-blame.nvim',
 
   -- LSP
-  use { 'neovim/nvim-lspconfig' } -- Configurations for Nvim LSP
-  use { 'williamboman/mason.nvim' }
+  'neovim/nvim-lspconfig', -- Configurations for Nvim LSP
+  'williamboman/mason.nvim',
 
-  use { "p00f/clangd_extensions.nvim" }
+  "p00f/clangd_extensions.nvim",
 
   -- Complete
-  -- use { 'hrsh7th/cmp-nvim-lsp' }
-  -- use { 'hrsh7th/cmp-buffer' }
-  -- use { 'hrsh7th/cmp-path' }
-  -- use { 'hrsh7th/cmp-cmdline' }
-  -- use { 'hrsh7th/nvim-cmp' }
+  -- 'hrsh7th/cmp-nvim-lsp',
+  -- 'hrsh7th/cmp-buffer',
+  -- 'hrsh7th/cmp-path',
+  -- 'hrsh7th/cmp-cmdline',
+  -- 'hrsh7th/nvim-cmp',
 
   -- Aid Tool
-  use { "numToStr/FTerm.nvim" }
-
-  --  use({
-  --    "jackMort/ChatGPT.nvim",
-  --    config = function()
-  --      require("chatgpt").setup({
-  --        -- optional configuration
-  --      })
-  --    end,
-  --    requires = {
-  --      "MunifTanjim/nui.nvim",
-  --      "nvim-lua/plenary.nvim",
-  --      "nvim-telescope/telescope.nvim"
-  --    }
-  --  })
+  "numToStr/FTerm.nvim",
 
   -- UI
-  use {
+  {
     'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-  }
+    dependencies = {
+      'kyazdani42/nvim-web-devicons',
+      lazy = true
+    }
+  },
   -- Lua
-  use {
+  {
     "folke/todo-comments.nvim",
-    requires = "nvim-lua/plenary.nvim",
+    dependencies = "nvim-lua/plenary.nvim",
     config = function()
       require("user.plugins.pconfig.todo_comments")
     end
-  }
-  -- use {
+  },
+  -- {
   --   'startup-nvim/startup.nvim',
-  --   requires = { 'nvim-telescope/telescope.nvim', 'nvim-lua/plenary.nvim' },
-  -- }
-  use { 'nvim-telescope/telescope-ui-select.nvim' }
+  --   dependencies = { 'nvim-telescope/telescope.nvim', 'nvim-lua/plenary.nvim' },
+  -- },
+  'nvim-telescope/telescope-ui-select.nvim',
 
   -- mini.nvim
-  use { 'echasnovski/mini.nvim',
+  {
+    'echasnovski/mini.nvim',
     config = function()
       require("user.plugins.pconfig.animate")
       require("user.plugins.pconfig.completion")
@@ -96,5 +100,6 @@ return require('packer').startup(function(use)
       require("user.plugins.pconfig.minifiles")
       require("user.plugins.pconfig.session")
       require("user.plugins.pconfig.starter")
-    end }
-end)
+    end
+  },
+ })
